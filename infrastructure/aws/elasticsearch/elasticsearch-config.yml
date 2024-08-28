@@ -1,0 +1,10 @@
+ClusterName: 'RizzzleESCluster'
+InstanceCount: 2
+InstanceType: 't2.medium.elasticsearch'
+EBSOptions:
+  EBSEnabled: true
+  VolumeSize: 20
+
+
+#Custom Changes:
+#Instance ID: Replace your-instance-id with your actual EC2 instance ID to track specific metrics.

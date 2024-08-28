@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'S3 bucket for Rizzzle static assets'
+
+Resources:
+  RizzzleS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: 'your-s3-bucket-name'
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Enabled
+
+
+#Instructions:
+#
+#Replace your-s3-bucket-name: Use a globally unique name for your S3 bucket.
+#Deploy the Template: Create the S3 bucket using the AWS CLI or Management Console.

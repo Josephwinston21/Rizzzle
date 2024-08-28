@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template for deploying the Rizzzle application infrastructure.
+
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: 'rizzzle-app-bucket'
+
+  RDSInstance:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      Engine: 'mysql'
+      DBInstanceClass: 'db.t2.micro'
+      AllocatedStorage: '20'
+      DBName: 'RizzzleDB'
+      MasterUsername: 'admin'
+      MasterUserPassword: 'password'
+      PubliclyAccessible: true
+
+  ElasticBeanstalkEnvironment:
+    Type: 'AWS::ElasticBeanstalk::Environment'
+    Properties:
+      ApplicationName: 'RizzzleApp'
+      EnvironmentName: 'RizzzleApp-env'
+      SolutionStackName: '64bit Amazon Linux 2 v3.1.2 running Docker'
+      OptionSettings:
+        - Namespace: 'aws:autoscaling:launchconfiguration'
+          OptionName: 'IamInstanceProfile'
+          Value: 'aws-elasticbeanstalk-ec2-role'
+        - Namespace: 'aws:elasticbeanstalk:environment'
+          OptionName: 'EnvironmentType'
+          Value: 'LoadBalanced'
+
+
+#Custom Changes:
+#Bucket Name: Update BucketName with your preferred S3 bucket name if different from the default rizzzle-app-bucket.
+#RDS Configuration: Update DBName, MasterUsername, and MasterUserPassword with your custom database name, username, and password.
+#Elastic Beanstalk: Ensure the IamInstanceProfile value matches the IAM role for your Elastic Beanstalk environment.

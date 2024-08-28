@@ -1,0 +1,15 @@
+AlarmName: 'HighCPUUtilization'
+MetricName: 'CPUUtilization'
+Namespace: 'AWS/EC2'
+Statistic: 'Average'
+Period: 300
+EvaluationPeriods: 1
+Threshold: 70
+ComparisonOperator: 'GreaterThanThreshold'
+Dimensions:
+  - Name: 'InstanceId'
+    Value: 'your-instance-id'
+
+
+#Custom Changes:
+#Instance ID: Replace your-instance-id with your actual EC2 instance ID to monitor CPU utilization

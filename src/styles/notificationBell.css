@@ -1,0 +1,20 @@
+.notification-bell {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-bell .bell-icon {
+    font-size: 24px;
+    color: #7743CE;
+}
+
+.notification-bell span {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 12px;
+}

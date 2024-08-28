@@ -1,0 +1,9 @@
+{
+  "presets": [
+    "@babel/preset-env",  // Transpiles modern JavaScript (ES6+)
+    "@babel/preset-react" // Transpiles JSX and React code
+  ],
+  "plugins": [
+    "framer-motion/babel-plugin" // Optional: This plugin can optimize Framer Motion animations
+  ]
+}

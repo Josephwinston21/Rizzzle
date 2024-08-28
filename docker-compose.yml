@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:80'
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    depends_on:
+      - api
+
+  api:
+    build: ./backend
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: rizzzle
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
+
+#Instructions:
+#
+#Customize Ports: Adjust the port mappings as needed for your environment.
+#Set Environment Variables: Make sure to set appropriate environment variables for production.
+#Update Volumes: Ensure the volume paths match your project's structure.

@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Elasticsearch domain for Rizzzle application'
+
+Resources:
+  RizzzleElasticsearchDomain:
+    Type: 'AWS::Elasticsearch::Domain'
+    Properties:
+      DomainName: 'rizzzle-es-domain'
+      ElasticsearchVersion: '7.10'
+      ElasticsearchClusterConfig:
+        InstanceType: 'm5.large.elasticsearch'
+        InstanceCount: 2
+      EBSOptions:
+        EBSEnabled: true
+        VolumeSize: 10
+        VolumeType: 'gp2'
+
+
+#Instructions:
+#
+#Configure: Optionally, change DomainName and InstanceType based on your requirements.
+#Run:
+#  bash
+#  Copy code
+#  aws cloudformation create-stack --stack-name RizzzleElasticsearchStack --template-body file://elasticsearch-template.yaml

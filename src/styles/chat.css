@@ -1,0 +1,46 @@
+.chat {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.chat .messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.chat .message {
+    margin-bottom: 15px;
+}
+
+.chat .chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat .chat-input input {
+    flex: 1;
+}
+
+.chat .call-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.chat .call-options button {
+    background-color: #7743CE;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat .call-options button:hover {
+    background-color: #5e32a8;
+}

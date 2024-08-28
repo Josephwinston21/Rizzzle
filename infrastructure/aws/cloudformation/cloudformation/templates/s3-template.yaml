@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'S3 Bucket for Rizzzle static assets'
+
+Resources:
+  RizzzleS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: 'rizzzle-static-assets'
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Enabled
+
+Outputs:
+  S3BucketName:
+    Description: 'Name of S3 bucket'
+    Value: !Ref RizzzleS3Bucket
+
+#Instructions:
+#
+#Configure: Optionally, change BucketName to a globally unique name.
+#Run:
+#  bash
+#  Copy code
+#  aws cloudformation create-stack --stack-name RizzzleS3Stack --template-body file://s3-template.yaml

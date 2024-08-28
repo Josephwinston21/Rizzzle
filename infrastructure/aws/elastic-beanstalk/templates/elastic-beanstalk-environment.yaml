@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS Elastic Beanstalk Environment for Rizzzle'
+
+Resources:
+  RizzzleElasticBeanstalkEnvironment:
+    Type: 'AWS::ElasticBeanstalk::Environment'
+    Properties:
+      ApplicationName: !Ref 'RizzzleElasticBeanstalkApplication'
+      EnvironmentName: 'rizzzle-env'
+      SolutionStackName: '64bit Amazon Linux 2 v5.4.4 running Docker'
+      OptionSettings:
+        - Namespace: 'aws:autoscaling:launchconfiguration'
+          OptionName: 'InstanceType'
+          Value: 't3.micro'
+        - Namespace: 'aws:elasticbeanstalk:application:environment'
+          OptionName: 'DOCKER_IMAGE'
+          Value: 'your-dockerhub-username/rizzzle-app:latest'
+        - Namespace: 'aws:elasticbeanstalk:application:environment'
+          OptionName: 'S3_BUCKET'
+          Value: 'your-s3-bucket-name'
+
+
+
+
+#Instructions:
+#
+#Customize Environment Name and Application Name: Update as needed.
+#Replace your-dockerhub-username and your-s3-bucket-name: Set these to your Docker Hub username and S3 bucket name.
+#Deploy the Template: Use AWS CLI or AWS Management Console to deploy this template

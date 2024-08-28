@@ -1,0 +1,13 @@
+DBInstanceIdentifier: 'rizzzle-db-instance'
+AllocatedStorage: 20
+DBInstanceClass: 'db.t2.micro'
+Engine: 'mysql'
+MasterUsername: 'admin'
+MasterUserPassword: 'password'
+BackupRetentionPeriod: 7
+PubliclyAccessible: true
+
+
+#  infrastructure/aws/rds/database-config.yml
+#Custom Changes:
+#Database Configuration: Update the DBInstanceIdentifier, MasterUsername, and MasterUserPassword with your specific RDS configuration.

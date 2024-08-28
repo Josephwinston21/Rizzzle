@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build
+out/
+.next/
+dist/
+
+# Logs
+logs/
+*.log
+
+# dotenv environment variables
+.env
+.env.local
+.env.production
+.env*.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+Dockerfile
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IntelliJ
+.idea/
+*.iml
+
+# AWS Credentials
+.aws/

@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'VPC for Rizzzle application'
+
+Resources:
+  RizzzleVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: '10.0.0.0/16'
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: RizzzleVPC
+
+  PublicSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref RizzzleVPC
+      CidrBlock: '10.0.1.0/24'
+      MapPublicIpOnLaunch: true
+      AvailabilityZone: !Select [0, !GetAZs '']
+
+  InternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties: {}
+
+  AttachGateway:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: !Ref RizzzleVPC
+      InternetGatewayId: !Ref InternetGateway
+
+Outputs:
+  VPCId:
+    Description: 'VPC ID'
+    Value: !Ref RizzzleVPC
+
+
+#Instructions:
+#
+#Configure: NA (No configuration required unless you want to change the VPC CIDR block or subnet configuration).
+#Run:
+#  bash
+#  Copy code
+#  aws cloudformation create-stack --stack-name RizzzleVPCStack --template-body file://vpc-template.yaml

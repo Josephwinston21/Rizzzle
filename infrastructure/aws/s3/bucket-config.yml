@@ -1,0 +1,7 @@
+BucketName: 'rizzzle-app-bucket'
+VersioningConfiguration:
+  Status: Enabled
+
+#  . infrastructure/aws/s3/bucket-config.yml
+#Custom Changes:
+#Bucket Name: Replace BucketName with your preferred S3 bucket name.

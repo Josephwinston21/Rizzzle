@@ -1,0 +1,29 @@
+.top-picks {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.top-picks h3 {
+    margin-bottom: 20px;
+}
+
+.top-picks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.top-picks ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.top-picks ul li img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}

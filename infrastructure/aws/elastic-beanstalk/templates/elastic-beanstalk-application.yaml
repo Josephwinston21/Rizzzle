@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS Elastic Beanstalk Application for Rizzzle'
+
+Resources:
+  RizzzleElasticBeanstalkApplication:
+    Type: 'AWS::ElasticBeanstalk::Application'
+    Properties:
+      ApplicationName: 'RizzzleApp'
+      Description: 'Application for Rizzzle, a dating platform.'
+
+
+#Instructions:
+#
+#Customize Application Name: Update ApplicationName if you prefer a different name.
+#Deploy the Template: Use this template to create the Elastic Beanstalk application.

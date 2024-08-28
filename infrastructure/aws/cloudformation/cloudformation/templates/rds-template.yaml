@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'RDS for Rizzzle application'
+
+Resources:
+  RizzzleDBSubnetGroup:
+    Type: 'AWS::RDS::DBSubnetGroup'
+    Properties:
+      DBSubnetGroupDescription: 'Subnet group for RDS'
+      SubnetIds:
+        - subnet-xxxxxx
+        - subnet-yyyyyy
+
+  RizzzleDB:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      DBName: 'rizzzle'
+      AllocatedStorage: '20'
+      DBInstanceClass: db.t3.micro
+      Engine: 'MySQL'
+      MasterUsername: 'admin'
+      MasterUserPassword: 'password'
+      VPCSecurityGroups:
+        - sg-xxxxxxxx
+      DBSubnetGroupName: !Ref RizzzleDBSubnetGroup
+      PubliclyAccessible: false
+
+#Instructions:
+#
+#Configure:
+#DBSubnetGroup: Replace subnet-xxxxxx and subnet-yyyyyy with your actual subnet IDs.
+#VPCSecurityGroups: Replace sg-xxxxxxxx with your security group ID.
+#MasterUsername and MasterUserPassword: Change these to secure credentials.
+#Run:
+#  bash
+#  Copy code
+#  aws cloudformation create-stack --stack-name RizzzleRDSStack --template-body file://rds-template.yaml

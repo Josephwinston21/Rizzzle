@@ -1,0 +1,12 @@
+package com.rizzzle.repositories;
+
+import com.rizzzle.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface SearchRepository extends JpaRepository<User, String> {
+    List<User> findByNameContaining(String query);
+}

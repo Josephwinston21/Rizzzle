@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'RDS instance for Rizzzle'
+
+Resources:
+  RizzzleRDSInstance:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      DBName: 'rizzzle'
+      AllocatedStorage: '20'
+      DBInstanceClass: 'db.t3.micro'
+      Engine: 'MySQL'
+      MasterUsername: 'admin'
+      MasterUserPassword: 'password'
+      VPCSecurityGroups:
+        - sg-xxxxxxxx
+      DBSubnetGroupName: !Ref 'RizzzleDBSubnetGroup'
+      PubliclyAccessible: false
+
+  RizzzleDBSubnetGroup:
+    Type: 'AWS::RDS::DBSubnetGroup'
+    Properties:
+      DBSubnetGroupDescription: 'Subnet group for Rizzzle RDS instance'
+      SubnetIds:
+        - subnet-xxxxxx
+        - subnet-yyyyyy
+
+
+#Instructions:
+#
+#Customize MasterUsername and MasterUserPassword: Update with secure credentials.
+#Replace sg-xxxxxxxx, subnet-xxxxxx, and subnet-yyyyyy: Use your security group and subnet IDs.
+#Deploy the Template: Deploy using the AWS CLI or Management Console.

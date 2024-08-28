@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Elastic Beanstalk environment for Rizzzle application'
+
+Resources:
+  RizzzleElasticBeanstalkApp:
+    Type: 'AWS::ElasticBeanstalk::Application'
+    Properties:
+      ApplicationName: 'RizzzleApp'
+
+  RizzzleElasticBeanstalkEnv:
+    Type: 'AWS::ElasticBeanstalk::Environment'
+    Properties:
+      ApplicationName: !Ref RizzzleElasticBeanstalkApp
+      EnvironmentName: 'RizzzleEnv'
+      SolutionStackName: '64bit Amazon Linux 2 v5.4.4 running Corretto 11'
+      OptionSettings:
+        - Namespace: 'aws:autoscaling:launchconfiguration'
+          OptionName: 'InstanceType'
+          Value: 't3.micro'
+        - Namespace: 'aws:elasticbeanstalk:application:environment'
+          OptionName: 'JDBC_CONNECTION_STRING'
+          Value: !Sub jdbc:mysql://${RDSHost}:${RDSPort}/rizzzle
+
+#
+#Instructions:
+#
+#Configure: Replace JDBC_CONNECTION_STRING with the correct connection string for your RDS database.
+#Run:
+#  bash
+#  Copy code
+#  aws cloudformation create-stack --stack-name RizzzleBeanstalkStack --template-body file://beanstalk-template.yaml

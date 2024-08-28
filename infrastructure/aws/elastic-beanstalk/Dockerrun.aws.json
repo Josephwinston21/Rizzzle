@@ -1,0 +1,16 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "rizzzle-app:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "8080"
+    }
+  ]
+}
+
+//Custom Changes:
+//Image Name: Update the "Name" field with your Docker image name if it differs from rizzzle-app:latest.
+//Container Port: Ensure the "ContainerPort" value matches the port your application is using, default is 8080.

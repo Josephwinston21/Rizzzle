@@ -1,0 +1,15 @@
+.preferences-page {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.preferences-page h2 {
+    margin-bottom: 20px;
+}
+
+.preferences-page .filters {
+    margin-top: 20px;
+}
