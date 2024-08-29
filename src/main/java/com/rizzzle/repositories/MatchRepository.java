@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface MatchRepository extends JpaRepository<Match, String> {
     List<Match> findByUserId(String userId);
+
+    void deleteById(Long id);
 }

@@ -35,6 +35,17 @@ const Settings = ({ updateSettings }) => {
             <button onClick={handleSaveSettings}>Save Settings</button>
         </div>
     );
+
+    const SettingsPage = () => {
+        const userId = 1; // Retrieve this from your authentication context or state
+
+        return (
+            <div>
+                <h1>Settings</h1>
+                <UserSettings userId={userId} />
+            </div>
+        );
+    };
 }
 
 export default Settings;

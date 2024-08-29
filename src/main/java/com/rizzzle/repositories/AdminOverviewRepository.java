@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface AdminOverviewRepository extends JpaRepository<User, String> {
+    void deleteById(Long id);
     // Implement custom queries for gathering statistics and user management
 }

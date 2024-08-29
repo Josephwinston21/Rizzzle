@@ -1,5 +1,7 @@
 package com.rizzzle.services;
 
+import com.rizzzle.models.UserSettings;
+import com.rizzzle.repositories.UserSettingsRepository;
 import com.rizzzle.models.User;
 import com.rizzzle.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,8 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-
+    @Autowired
+    private UserSettingsRepository userSettingsRepository;
     @Autowired
     private UserRepository userRepository;
 
@@ -43,4 +46,20 @@ public class UserService {
         // Logic to check if email already exists
         return userRepository.existsByEmail(email);
     }
+    public UserSettings getUserSettings(Long userId) {
+        return userSettingsRepository.findByUserId(userId);
+    }
+
+    public UserSettings updateUserSettings(Long userId, boolean receiveNotifications, String themePreference, String languagePreference) {
+        UserSettings settings = userSettingsRepository.findByUserId(userId);
+        if (settings == null) {
+            settings = new UserSettings(userId, receiveNotifications, themePreference, languagePreference);
+        } else {
+            settings.setReceiveNotifications(receiveNotifications);
+            settings.setThemePreference(themePreference);
+            settings.setLanguagePreference(languagePreference);
+        }
+        return userSettingsRepository.save(settings);
+    }
+
 }
