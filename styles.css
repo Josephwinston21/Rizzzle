@@ -14,32 +14,36 @@ body {
 
 .temp-alert {
     color: white;
-    margin-top: 80px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, cursive, sans-serif;
+    font-size: 12px;
 }
 
 .logo {
-    height: 200px;
-    width: 200px;
-    display: block;
+    height: 70px;
+    width:  70px;
+    display: flex;
     float: left;
 }
 
 #main-text {
     color: white;
     font-weight: bold;
-    font-size: 10rem;
+    font-size: 4rem;
     font-family: 'Indie Flower', cursive;
 }
 
 #players {
     color: white;
-    font-size: 2rem;
+    font-size: 1rem;
     font-style: italic;
+    font-weight: bold;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 250px;
+    gap: 100px;
     font-family: 'Indie Flower', cursive;
+    margin-top: -50px;
+
 }
 
 #img-container {
@@ -48,9 +52,62 @@ body {
     gap: 80px;
 }
 
+.dices{
+    height: 80px;
+    width:  80px;
+}
+
 #rizzzle {
     color: white;
+    margin-top: 40px;
+    text-size: 1em;
+}
+
+/*MEDIA QUERY FOR SCREEN WIDTH LESS THAN 640PX */
+@media (max-width: 640px){
+ #img-container{
+     flex-direction: column;
+     gap: 50px;
+ }
+
+ .temp-alert {
+     color: white;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, cursive, sans-serif;
+     font-size: 5px;
+     visibility: hidden;
+ }
+
+
+.logo {
+    height: 50px;
+    width:  50px;
     display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    flex-wrap: wrap;
+    margin-left: 200px;
+}
+
+
+#players {
+    color: white;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-right: 50px;
+}
+
+.img-1{
+  margin-top: -10px;
+  padding-top: -15em;
+}
+
+#main-text {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Indie Flower', cursive;
+}
+
 }
