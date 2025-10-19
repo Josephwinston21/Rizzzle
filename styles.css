@@ -1,0 +1,56 @@
+body {
+    background-color: #3EA8E5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+.temp-alert {
+    color: white;
+    margin-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, cursive, sans-serif;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    display: block;
+    float: left;
+}
+
+#main-text {
+    color: white;
+    font-weight: bold;
+    font-size: 10rem;
+    font-family: 'Indie Flower', cursive;
+}
+
+#players {
+    color: white;
+    font-size: 2rem;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#img-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+#rizzzle {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}

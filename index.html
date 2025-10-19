@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizzzle</title>
-    <link href="Styles/style.css" rel="stylesheet">
-   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dice Game</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet" />
 </head>
+
 <body>
-    <div>
-         <img class="img" src="images/Logo.png" alt="Logo">
+  <div id="container">
+    <img src="images/Logo.png" alt="logo" class="logo">
+    <div class="temp-alert">
+      <h1>
+        Rizzzle will be Launching soon. In the meantime play this game I've created. Refresh to see if you can beat me
+      </h1>
     </div>
-    <h2>Rizzzle, Launching soon!!!</h1>
+  </div>
+  <div class="tex-content">
+    <h1 id="main-text">Refresh Me</h1>
+    <div id="players">
+      <h3 class="player-1">Player-1</h3>
+      <h3 class="player-2">Player-2</h3>
+    </div>
+  </div>
+  <div id="img-container">
+    <img src="images/dice1.png" alt="player 1 dice" class="img-1">
+    <img src="images/dice6.png" alt="player 2 dice" class="img-2">
+  </div>
+  <script src="./script.js"></script>
+  <h1 id="rizzzle"> www 🎲 rizzzle 🎲 com</h1>
+
 </body>
+
 </html>
