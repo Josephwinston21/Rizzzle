@@ -74,7 +74,6 @@ body {
      color: white;
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, cursive, sans-serif;
      font-size: 5px;
-     visibility: hidden;
  }
 
 
@@ -83,7 +82,8 @@ body {
     width:  50px;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 200px;
+    margin-left: 25px;
+    text-wrap: initial;
 }
 
 
@@ -108,6 +108,7 @@ body {
     font-weight: bold;
     font-size: 2rem;
     font-family: 'Indie Flower', cursive;
+    margin-top: 50px;
 }
 
 }
